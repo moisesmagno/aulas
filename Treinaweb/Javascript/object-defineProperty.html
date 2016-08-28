@@ -1,0 +1,21 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Object.defineProperty</title>
+	</head>
+	<body>
+		<script>
+			var pessoa = {};
+			Object.defineProperty(pessoa, 'nome', {
+				configurable: false,
+				value: 'Moisés',
+				writable: false
+			});
+			
+			pessoa.nome = "Bruno";
+			console.log(pessoa.nome);
+			delete pessoa.nome;
+			console.log(pessoa.hasOwnProperty('nome'));
+		</script>
+	</body>
+</html>

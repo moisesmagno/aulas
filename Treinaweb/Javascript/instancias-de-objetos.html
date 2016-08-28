@@ -1,0 +1,47 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Instância de objeitos</title>
+	</head>
+	<body>
+		<script>
+			var Carro = function(nome){
+				this.nome = nome;
+			}
+			
+			var carro1 = new Carro('Gol');
+			var carro2 = new Carro('Veloxter');
+			
+			console.log(carro1.nome);
+			console.log(carro2.nome);
+			
+			console.log('---------------------------------')
+			
+			var obj = new Object();
+			obj.nome = "Moisés";
+			
+			console.log(obj);
+			console.log(typeof obj);
+			
+			console.log('---------------------------------')
+		
+			//OBJETO LITERAL
+			var pessoa = {
+				nome: 'Moisés Salvador'
+			};
+			pessoa.sobrenome = 'Escurra Aguilar';
+			
+			Object.defineProperty(pessoa, 'idade', {
+				configurable: false,
+				enumeragle: false,
+				value: 28,
+				writable: false
+			});
+			
+			delete pessoa.idade;
+			
+			console.log(pessoa.nome+' '+pessoa.sobrenome + ' tem ' + pessoa.idade);	
+			
+		</script>
+	</body>
+</html>

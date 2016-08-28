@@ -1,0 +1,51 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Object.defineProperty</title>
+	</head>
+	<body>
+		<script>
+			var Pessoa = function(nome, idade){
+				this.nome = nome;
+				this.idade = idade;
+			};
+			
+			var Carro = function(ano){
+				this.ano = ano;
+			};
+			
+			var Passaro = function(tamanho){
+				this.tamanho = tamanho;
+			};
+			
+			var pessoa = new Pessoa('Moisés', 28);
+			var carro = new Carro(2017);
+			var passaro = new Passaro('Pequeno');
+			
+			//Briga de instâncias.
+			var pessoa2 = pessoa;
+			var carro2 = carro;
+			var passaro2 = passaro;
+			
+			Object.defineProperty(carro, 'cor', {
+				configurable: false,
+				value: 'Preto'
+			});
+			
+			Object.defineProperty(passaro, 'cor', {
+				configurable: false,
+				value: 'Vermelho'
+			});
+			
+			delete pessoa.cor;
+			delete passaro.cor;
+			
+			pessoa2.nome = 'Moisesmagno';
+			console.log(pessoa2.nome);
+			console.log(carro2.cor);
+			console.log(passaro2.cor);
+			console.log(pessoa2, pessoa, carro, passaro);
+			
+		</script>
+	</body>
+</html>
