@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+	<head>
+		<meta charset="UTF-8">
+		<title>Criando construtores</title>
+	</head>
+<body>
+	<p id="visualizar"></p>
+	<br>
+	<p id="visualizarP"></p>
+	<br>
+	<p id="visualizarA"></p>
+	<script>
+			//Construturo 1 - carro
+			var carro = function(cor){
+				this.cor = cor
+			}	
+
+			var fusca = new carro("vermelho");
+
+			console.log(fusca);
+
+			document.getElementById("visualizar").innerHTML = "A cor do carro é "+fusca.cor;
+
+			//Construtor 2 - pessoa
+			var pessoa = function(genero){
+				this.genero = genero;
+			}
+
+			var mulher = new pessoa("mulher");
+			mulher.nome = "Suellen";
+
+			console.log(mulher);
+
+			document.getElementById("visualizarP").innerHTML = mulher.nome + " é " + mulher.genero;
+
+			//Construtor 3
+			var animal = function(nome, especie){
+				this.nome = nome;	
+				this.especie = especie;
+			}
+
+			var cachorro = new animal("Duki", "Cachorro");
+
+			console.log(cachorro);
+
+			document.getElementById("visualizarA").innerHTML = cachorro.nome + " é " + cachorro.especie;
+
+	</script>
+
+</body>

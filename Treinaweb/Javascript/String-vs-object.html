@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the second character of the string "MOISES SALVADOR ESCURRA AGUILAR".</p>
+
+<script>
+	var num = 9;
+</script>
+
+<button onclick="viewFunction(num)">clique aqui</button>
+
+<p id="exibirConteudo"></p>
+
+<script>
+function viewFunction(num){
+
+	var name = "MOISES SALVADOR ESCURRA AGUILAR";
+
+	if(num >= 0){
+		var letter = name.charAt(num);
+		document.getElementById("exibirConteudo").innerHTML = letter;
+	}else{
+		var letter = name.charAt(8);
+		document.getElementById("exibirConteudo").innerHTML = letter;
+	}
+
+}
+</script>
+
+</body>
