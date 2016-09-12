@@ -1,0 +1,42 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Instância de objeitos</title>
+	</head>
+	<body>
+		<script>
+			
+			//Uma instância guarda sempre uma cópia de seu construtor
+			var carro = function(cor){
+				this.cor = cor;
+			}
+
+			hb20 = new carro("preto");
+
+			console.log(hb20.constructor);
+
+			var copiaDoConstrutoCarro = hb20.constructor;
+
+			var bmw = new copiaDoConstrutoCarro();
+
+			console.log(bmw instanceof carro);
+
+			console.log("---------------------------------");
+
+			var pessoa = function(genero){
+				this.genero = genero;
+			}
+
+			mulher = new pessoa("femenino");
+
+			console.log(mulher.constructor);
+
+			var copiaDoConstrutorPessoa = mulher.constructor;
+
+			var homem = new copiaDoConstrutorPessoa();
+
+			console.log(homem instanceof pessoa);
+			
+		</script>
+	</body>
+</html>

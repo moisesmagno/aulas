@@ -1,0 +1,86 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Lista de contatos</title>
+	</head>
+	<body>
+		<script>
+			var agenda = {
+				nome: "Agentda de contatos",
+				contatos: [],
+				adicionar: function(contato){
+					if(contato.nome && contato.telefone && contato.email){
+						this.contatos.push(contato);
+					}else{
+						console.log("Informar os dados obrigatórios!");
+					}
+				},
+				listar: function(){
+					for (indice in this.contatos){
+						
+						//Pega o indice do array
+						var contato = this.contatos[indice];
+						
+						if(contato.site){
+							console.log(contato.nome+' '+contato.telefone+' '+contato.email+' '+contato.site);
+						}else{
+							console.log(contato.nome+' '+contato.telefone+' '+contato.email);
+						}
+					}
+				},
+				remover: function(nomeContato){
+					for (indice in this.contatos){
+						var contato = this.contatos[indice];
+						
+						if(contato.nome === nomeContato){
+							//Vamos a excluir apenas um elemento do array apartir do indice informado.
+							this.contatos.splice(indice, 1);
+							return true;
+						}
+					}
+					return false;
+				}
+			};
+
+			//add new conctac
+			agenda.adicionar({
+				nome: "Moisés",
+				telefone: 964816215,
+				email: "moisesmagno@gmail.com",
+				site: "wwww.moisesmagno.com"
+			});
+
+			agenda.adicionar({
+				nome: "Suellen",
+				telefone: 73732325,
+				email: "suellen@gmail.com"
+			});
+
+			agenda.adicionar({
+				nome: "Carmen mamá",
+				telefone: 98761234,
+				email: "carmen@gmail.com"
+			});
+
+			agenda.adicionar({
+				nome: "Lucas perin",
+				telefone: 98731624,
+				email: "lucas.perin@gmail.com"
+			});
+
+			//list all contacts
+			agenda.listar();	
+
+			//Delite contatc
+			if(agenda.remover('Lucas perin')){
+				console.log('O contato foi removido com sucesso!');
+			}else{
+				console.log('O contato informdo não existe!');
+			}	
+
+			//list all contacts
+			agenda.listar();	
+
+		</script>
+	</body>
+</html>
