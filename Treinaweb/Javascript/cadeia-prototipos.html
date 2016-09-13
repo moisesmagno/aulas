@@ -1,0 +1,52 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cadeia de prototipos</title>
+	</head>
+	<body>
+		<script>
+			var Habilidades = function(){
+			  	this.falar = function(fala){
+			    	console.log(fala);
+			  	}		
+			}
+
+			var Homem = function(){};
+			var Mulher = function(){};
+
+			Homem.prototype = new Habilidades();
+			Mulher.prototype = new Habilidades();
+
+			var moises = new Homem();
+			var su = new Mulher();
+
+			moises.falar('Meu nome é Moisés!');
+			su.falar('Meu nome é Suellen!');
+
+			console.log('---------------------------------------');
+
+			var carro = function(){
+				this.funcionalidade = function(funcao){
+					return funcao;
+				}
+			};
+
+			var carro1 = function(cor){
+				this.cor = cor;
+			};
+			var carro2 = function(cor){
+				this.cor = cor;
+			}
+
+			carro1.prototype = new carro();
+			carro2.prototype = new carro();
+
+			var gol = new carro1('preto');
+			var fusca = new carro2('azul');
+
+			console.log('O gol de cor ' + gol.cor + ' está ' + gol.funcionalidade("Acelerando"));
+			console.log('O fusca de cor ' + fusca.cor + ' está ' + gol.funcionalidade("Mudando de marcha"));
+
+		</script>
+	</body>
+</html>

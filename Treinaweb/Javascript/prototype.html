@@ -1,0 +1,27 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Prototype</title>
+	</head>
+	<body>
+		<script>
+			var obj = {};
+			// o código abaixo não dará problema, pois se o método chamado não existir no obj criado ele o procurará no prototype, e caso exista será exibido, senão dará problema.
+			console.log(obj.toString());
+
+			console.log('----------------------');
+
+			var obj2 = new Object();
+			console.log(obj2.toString());
+
+			console.log('----------------------');
+
+			var objmaster = function(){
+					this.prorpiedade;
+				};
+			var obj3 = new objmaster();
+			
+			console.log(obj3.toString());	
+		</script>
+	</body>
+</html>
