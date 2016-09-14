@@ -1,0 +1,30 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Prototype com json</title>
+	</head>
+	<body>
+		<script>
+			var habilidades = {
+				falar: function(fala){
+					console.log(fala);
+				}
+			}
+
+			var pessoa = {
+				__proto__ : habilidades
+			}
+
+			pessoa.falar("Meu nome é Moisés");
+
+			var pessoa2 = {};
+
+			pessoa2.__proto__ = habilidades;
+
+			pessoa2.falar("Meu nome é Suellen");
+
+			console.log(Object.getPrototypeOf(pessoa2));
+
+		</script>
+	</body>
+</html>
