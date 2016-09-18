@@ -1,41 +1,47 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-		<title>Instância de objeitos</title>
+		<title>Object.create()</title>
 	</head>
 	<body>
 		<script>
-			
-			//Uma instância guarda sempre uma cópia de seu construtor
-			var carro = function(cor){
-				this.cor = cor;
+	
+		var a = Object.create(null);
+		var b = Object.create(Object.prototype);
+
+		// console.log(a.toString());
+		// console.log(b.toString());
+
+		console.log('--------------------------------');
+
+		var habilidades2 = function(){
+			this.falar2 = function(fala){
+				console.log(fala);
 			}
+		}
 
-			hb20 = new carro("preto");
+		var Humano = function(){};
 
-			console.log(hb20.constructor);
+		Humano.prototype = new habilidades2();
 
-			var copiaDoConstrutoCarro = hb20.constructor;
+		var moises = new Humano();
 
-			var bmw = new copiaDoConstrutoCarro();
+		Humano.prototype.falar2('Sou um prototype');
+		moises.falar2('Eu sou um humano!');
 
-			console.log(bmw instanceof carro);
 
-			console.log("---------------------------------");
+		console.log('--------------------------------');	
 
-			var pessoa = function(genero){
-				this.genero = genero;
+
+		var habilidades = {
+			falar: function(fala){
+				console.log(fala);
 			}
+		}
 
-			mulher = new pessoa("femenino");
+		var obj = Object.create(habilidades, {nome:{value: 'Moisés'}});
 
-			console.log(mulher.constructor);
-
-			var copiaDoConstrutorPessoa = mulher.constructor;
-
-			var homem = new copiaDoConstrutorPessoa();
-
-			console.log(homem instanceof pessoa);
+		obj.falar('Meu nome é: ' + obj.nome);
 			
 		</script>
 	</body>
