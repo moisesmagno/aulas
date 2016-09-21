@@ -1,0 +1,36 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Fabrica de robot</title>
+	</head>
+	<body>
+		<script>
+			var Funcionalidades = function(){
+				this.andar = function(direcao){
+					console.log(direcao);
+				};
+				this.falar = function(msg){
+					console.log(msg);
+				};
+			}
+
+
+			var Robot = function(nome){
+				this.nome = nome;
+			}
+
+			Robot.prototype = new Funcionalidades();
+
+			var robot1 = new Robot('Moisés');
+
+			robot1.falar('Meu nome é: '+robot1.nome);
+			robot1.andar('Andar para ezquerda e depois para direita');
+
+
+			var robot2 = new Robot('Magno');
+			robot1.falar('Meu nome é: '+robot2.nome);
+			robot1.andar('Andar para frente e depois para trás');
+		
+		</script>
+	</body>
+</html>

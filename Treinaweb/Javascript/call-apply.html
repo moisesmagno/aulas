@@ -1,0 +1,67 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>escopo</title>
+	</head>
+	<body>
+		<script>
+			
+			var nome = 'Global';
+			var idade = 0;
+			var tamanho = 0;
+			var peso = 0;
+
+			var pessoa1 = {
+				nome: 'Moisés',
+				idade: 28,
+				tamanho: 1.65,
+				peso: 60
+			}
+
+			var pessoa2 = {
+				nome: 'Suellen',
+				idade: 28,
+				tamanho: 1.60,
+				peso: 54
+			}
+
+			var descobrircaracteristicas = function(){
+				console.log('nome:' + this.nome);
+				console.log('idade:' + this.idade);
+				console.log('tamanho:' + this.tamanho);
+				console.log('peso:' + this.peso);
+			}
+
+			descobrircaracteristicas();
+
+			//call
+			descobrircaracteristicas.call(pessoa1);
+
+			//apply
+			descobrircaracteristicas.apply(pessoa2);
+
+
+			console.log('-----------------------');
+
+			var escola = {
+				nome: 'Nublei'
+			}
+
+			var descreverEmpresa =  function(cursos, qualidade){
+				
+				//Nome da empresa
+				console.log('Escola: ' + this.nome);
+
+				for (var i = 0; i<cursos.length; i++ ){
+					console.log('- '+ cursos[i]);
+				}
+
+				console.log('Qualidade: '+ qualidade);
+			}
+
+			descreverEmpresa.call(escola, ['php','js','java','node.js','html5','css3'], ['100% de qualidade']);
+			descreverEmpresa.apply(escola, [['php','js','java','node.js','html5','css3'], '100% de qualidade'])
+
+		</script>
+	</body>
+</html>

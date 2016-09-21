@@ -1,0 +1,32 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Callback</title>
+	</head>
+	<body>
+		<script>
+			
+			//Callback
+			var func1 = function(){
+				return 'Moisés inteligente';
+			}
+
+			var func2 =function(Callback){
+				console.log(Callback());
+			}
+
+			func2(func1);
+
+			console.log('------------------------');
+
+			var funcao = function(Callback){
+				console.log(Callback());
+			}
+			
+			funcao(function(){
+				return 'Outra froma de passar Callback.';
+			});
+
+		</script>
+	</body>
+</html>

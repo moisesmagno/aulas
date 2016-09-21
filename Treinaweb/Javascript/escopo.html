@@ -1,0 +1,36 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>escopo</title>
+	</head>
+	<body>
+		<script>
+			
+			var nome = 'Moisés';
+
+			var func1 = function(){
+				var curso = 'Javascript';
+
+				var func2 = function(){
+					console.log(nome);
+					console.log(curso);
+				}
+
+				func2();	
+			}
+
+			func1();
+
+			console.log('----------------------');
+
+			console.log(window.nome);
+
+			//Window é head object
+
+			console.log('nome' in window);
+			console.log('func1' in window);
+			console.log('func2' in window);
+
+		</script>
+	</body>
+</html>
