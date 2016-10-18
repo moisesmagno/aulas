@@ -1,0 +1,103 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Desenhando com Canvas</title>
+	</head>
+	<body>
+
+		<canvas width="150px" height="150px" style="border: 1px solid #000" id="desenho"></canvas>
+
+		<canvas width="150px" height="150px" style="border: 1px solid #000" id="desenhoPredio"></canvas>
+
+		<script>
+
+		var c = document.getElementById('desenho');
+		var ctx = c.getContext('2d');
+
+		// Inicia um novo desenho ou seja, ele fará um desenho com uma cor apenas, caso precise desenhar no mesmo desenho com outra cor, aí é só criar mais um beginPath()
+		ctx.beginPath();
+
+		//Cor do desenho de fundo
+		ctx.fillStyle = '#34495e';
+
+		//linha vertical esquerda b 
+		//(distância latereal esquerda, distâncias do top, largura da linha, altura da linha)
+		ctx.fillRect(30,20,10,70);
+
+		//linha horizontal baixo b
+		//(distância latereal esquerda, distâncias do top, largura da linha, altura da linha)
+		ctx.fillRect(30,90,60,10);
+
+		//linha vertical direita b
+		//(distância latereal esquerda, distâncias do top, largura da linha, altura da linha)
+		ctx.fillRect(90,50,10,50);
+
+		//linha horizontal cima b
+		//(distância latereal esquerda, distâncias do top, largura da linha, altura da linha)
+		ctx.fillRect(30,50,60,10);
+
+		//linha horizontal meio b
+		//(distância latereal esquerda, distâncias do top, largura da linha, altura da linha)
+		ctx.fillRect(30,70,30,10);
+
+        // Inicia um novo desenho ou seja, ele fará um desenho com uma cor apenas, caso precise desenhar no mesmo desenho com outra cor, aí é só criar mais um beginPath()
+		ctx.beginPath();
+
+		//Cor do desenho de fundo
+		ctx.fillStyle = '#2980b9';
+
+		//Cor da borda do desenho
+		// ctx.strokeStyle = 'orange';
+
+		//Executa o desenho
+		//ctx.stroke();
+
+		//linha horizontal superior
+		//(distância latereal esquerda, distâncias do top, largura da linha, altura da linha)
+		ctx.fillRect(30,20,90,10);
+
+		//linha vertical direita
+		//(distância latereal esquerda, distâncias do top, largura da linha, altura da linha)
+		ctx.fillRect(120,20,10,100);
+
+		//linha horizontal inferior
+		//(distância latereal esquerda, distâncias do top, largura da linha, altura da linha)
+		ctx.fillRect(20,120,110,10);
+
+
+
+
+		//----------------------------------------------------------------------------------
+
+
+		var cv = document.getElementById('desenhoPredio');
+		ctx = cv.getContext('2d');
+
+
+		//Cor do desenho de fundo
+		ctx.fillStyle = 'Red';
+
+
+		ctx.fillRect(20,20,100,120);
+
+
+		//segundo andar
+		ctx.clearRect(30,30,20,20);
+
+		ctx.clearRect(60,30,20,20);
+
+		ctx.clearRect(90,30,20,20);
+
+		//primeiro andar
+		ctx.clearRect(30,70,20,20);
+
+		ctx.clearRect(60,70,20,20);
+
+		ctx.clearRect(90,70,20,20);
+
+		//porta
+		ctx.clearRect(55,110,30,30);
+
+		</script>
+	</body>
+</html>

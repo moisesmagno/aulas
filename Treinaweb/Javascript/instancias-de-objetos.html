@@ -1,47 +1,35 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-		<title>Instância de objeitos</title>
+		<title>Web storage</title>
 	</head>
 	<body>
 		<script>
-			var Carro = function(nome){
-				this.nome = nome;
-			}
-			
-			var carro1 = new Carro('Gol');
-			var carro2 = new Carro('Veloxter');
-			
-			console.log(carro1.nome);
-			console.log(carro2.nome);
-			
-			console.log('---------------------------------')
-			
-			var obj = new Object();
-			obj.nome = "Moisés";
-			
-			console.log(obj);
-			console.log(typeof obj);
-			
-			console.log('---------------------------------')
-		
-			//OBJETO LITERAL
-			var pessoa = {
-				nome: 'Moisés Salvador'
-			};
-			pessoa.sobrenome = 'Escurra Aguilar';
-			
-			Object.defineProperty(pessoa, 'idade', {
-				configurable: false,
-				enumeragle: false,
-				value: 28,
-				writable: false
-			});
-			
-			delete pessoa.idade;
-			
-			console.log(pessoa.nome+' '+pessoa.sobrenome + ' tem ' + pessoa.idade);	
-			
+			// localStorage.nome = 'Moiséss Salvador';
+			// sessionStorage.sobrenome = 'Escurra Aguilar';		
+
+			// console.log(localStorage.nome);
+			// console.log(sessionStorage.sobrenome);
+
+			console.log('-------------------');
+			localStorage.idade1 = 28;
+			sessionStorage.idade2 = 29;
+			console.log(typeof localStorage.idade1);
+			console.log(typeof sessionStorage.idade2);
+
+			console.log('O localStorage ou o sessionStorage só armazena strings ou arrays em que seu conteúdo sejam do tipo primitivo, não armazena typo de daddos number ou float, etc.');
+
+			console.log(typeof parseInt(localStorage.idade1));
+			console.log(typeof parseInt(localStorage.idade2));
+
+			console.log('-------------------');
+
+			localStorage.array = ['moisesmagno', 'suellen.ananias'];
+			sessionStorage.array2 = ['Candy', 'Salvador', 'Carmen'];
+
+			console.log(localStorage.array);
+			console.log(sessionStorage.array2);
+
 		</script>
 	</body>
 </html>
