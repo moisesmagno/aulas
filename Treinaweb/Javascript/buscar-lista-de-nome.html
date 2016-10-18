@@ -1,0 +1,63 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Web storage</title>
+	</head>
+	<body>
+
+
+		<form id="form_buscar">
+			<input type="text" name='nome'>
+			<input type="submit">
+		</form>
+
+		<script>
+			
+		var dadosUsuario = [
+			{
+				'nome': 'Moisés Salvador',
+				'sobrenome': 'Escurra Aguilar',
+				'email': 'moisesmagno@gmail.com'
+			},
+			{
+				'nome': 'Suellen',
+				'sobrenome': 'da Silva Ananias',
+				'email': 'suellen@gmail.com'
+			},
+			{
+				'nome': 'Salvador',
+				'sobrenome': 'Escurra Aguilar',
+				'email': 'salvador@gmail.com'
+			},
+			{
+				'nome': 'Candy',
+				'sobrenome': 'Escurra Aguilar',
+				'email': 'candy@gmail.com'	
+			},
+			{
+				'nome': 'Carmen',
+				'sobrenome': 'Escurra Aguilar',
+				'email': 'carmen@gmail.com'	
+			}
+
+		]	
+
+		var inputForm = document.getElementById("form_buscar");
+
+		inputForm.addEventListener("submit", function(event){
+			event.preventDefault();
+			var valorInserido = inputForm.nome.value;
+
+			//var qtdeElementos = Object.getOwnPropertyNames(dadosUsuario).length; //Saber a quantide de elementos dentro um objeto literal.
+			for(var indice in dadosUsuario){
+				if(valorInserido == dadosUsuario[indice].nome){
+					alert(dadosUsuario[indice].nome+' '+dadosUsuario[indice].sobrenome+', '+dadosUsuario[indice].email);
+				}
+			}
+			
+		});
+
+
+		</script>
+	</body>
+</html>

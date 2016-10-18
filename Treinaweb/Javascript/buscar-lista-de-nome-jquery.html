@@ -1,0 +1,43 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Filtro de pessoas</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+				$(document).ready(function(){
+					var $busca = $('#inputbusca');
+					var nomes = $('.nome');
+
+					$busca.on('keyup', function(){
+						for(var i = 0; i < nomes.length; i++){
+							var $nome = $(nomes[i]);
+							var nome = $nome.text();
+							var textDigitado = $('#inputbusca').val();
+							if(nome.substring(0, textDigitado.length) !== textDigitado){
+								$nome.hide();
+							}else if(!textDigitado){
+								$nome.show();
+							}else{
+								$nome.show();
+							}
+						}
+					});
+				});
+		</script>
+	</head>
+	<body>
+
+		<input type="text" name='nome' placeholder="Buscar" id="inputbusca">
+			
+		<ul>
+			<li class="nome">Candy</li>
+			<li class="nome">Salvador</li>
+			<li class="nome">Carmen</li>
+			<li class="nome">Moisés</li>
+			<li class="nome">Suellen</li>
+			<li class="nome">Jessyca</li>
+			<li class="nome">Gabriel</li>
+		</ul>				
+		
+	</body>
+</html>
