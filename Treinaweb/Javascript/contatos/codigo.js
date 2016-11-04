@@ -2,7 +2,6 @@ $(document).ready(function(){
 	
 	var contatos = {
 		contatos: [],
-		contatoTemp: [],
 		contatosRetorno: [],
 		cadastrar: function(contato){
 			var emailValido = /^(\w+[._-]?)+@\w+(\w+[.]?)+$/; //ailton.santos@email.com
@@ -47,7 +46,7 @@ $(document).ready(function(){
 					//Salva todos os registros no localStorage novamente;
 					this.salvarContatos(this.contatosRetorno); 
 
-					var montaRegistro = "<li data-id=\""+DadosFormulario.id+"\"><div><span>"+DadosFormulario.nome+"</span><span>"+DadosFormulario.email+"</span><span>"+DadosFormulario.telefone+"</span></div><div><a href=\"#\">Editar</a><a href=\"#\">Excluir</a></div></li>";
+					var montaRegistro = "<li data-id=\""+DadosFormulario.id+"\" class=\"liContato\"><div><span>"+DadosFormulario.nome+"</span><span>"+DadosFormulario.email+"</span><span>"+DadosFormulario.telefone+"</span></div><div><a href=\"#\" id=\"editarContato\">Editar</a><a href=\"#\" id=\"excluirContato\">Excluir</a></div></li>";
 					$('.listaContatos').append(montaRegistro);	
 
 					//Mostra o total de registros.
@@ -59,7 +58,7 @@ $(document).ready(function(){
 					this.contatos.push(DadosFormulario);
 					this.salvarContatos(this.contatos);
 
-					var montaRegistro = "<li data-id=\""+DadosFormulario.id+"\"><div><span>"+DadosFormulario.nome+"</span><span>"+DadosFormulario.email+"</span><span>"+DadosFormulario.telefone+"</span></div><div><a href=\"#\">Editar</a><a href=\"#\">Excluir</a></div></li>";
+					var montaRegistro = "<li data-id=\""+DadosFormulario.id+"\" class=\"liContato\"><div><span>"+DadosFormulario.nome+"</span><span>"+DadosFormulario.email+"</span><span>"+DadosFormulario.telefone+"</span></div><div><a href=\"#\" id=\"editarContato\">Editar</a><a href=\"#\" id=\"excluirContato\">Excluir</a></div></li>";
 					$('.listaContatos').append(montaRegistro);	
 
 					//Mostra o total de registros.
@@ -67,6 +66,11 @@ $(document).ready(function(){
 				}
 
 				$("#id").val(Math.floor(Math.random() * 256));
+
+				//Limpa os campos
+				$("#name").val("");
+				$("#email").val("");
+				$("#telefone").val(""); 
 
 			}else{
 				alert('Por favor preencher todos os campos!');
@@ -99,16 +103,41 @@ $(document).ready(function(){
 			this.recuperarContatos();
 
 			for(index in this.contatosRetorno){
-				var montaRegistro = "<li data-id=\""+this.contatosRetorno[index].id+"\"><div><span>"+this.contatosRetorno[index].nome+"</span><span>"+this.contatosRetorno[index].email+"</span><span>"+this.contatosRetorno[index].telefone+"</span></div><div><a href=\"#\">Editar</a><a href=\"#\">Excluir</a></div></li>";
+				var montaRegistro = "<li data-id=\""+this.contatosRetorno[index].id+"\" class=\"liContato\"><div><span>"+this.contatosRetorno[index].nome+"</span><span>"+this.contatosRetorno[index].email+"</span><span>"+this.contatosRetorno[index].telefone+"</span></div><div><a href=\"#\" id=\"editarContato\">Editar</a><a href=\"#\" id=\"excluirContato\">Excluir</a></div></li>";
 
 				$('.listaContatos').append(montaRegistro);
 
 			}
 		},
-		remover: function(){
+		remover: function(id){
+
+			this.recuperarContatos();
+
+			for(index in this.contatosRetorno){
+				if(this.contatosRetorno[index].id === id){	
+					this.contatosRetorno.splice(index, 1);
+
+					this.salvarContatos(this.contatosRetorno);
+					return true;
+				}
+			}
 
 		},
 		atualizar: function(contato){
+
+			this.recuperarContatos();
+
+			for(index in this.contatosRetorno){
+				if(this.contatosRetorno[index].id ===  contato.id){
+					this.contatosRetorno[index].nome = contato.nome;		
+					this.contatosRetorno[index].email = contato.email;		
+					this.contatosRetorno[index].telefone = contato.telefone;		
+				}
+			}
+
+			this.salvarContatos(this.contatosRetorno);
+
+			location.reload();
 
 		}
 	}
@@ -125,25 +154,49 @@ $(document).ready(function(){
 			telefone: $("#telefone").val() 
 		}
 
-		//Limpa os campos
-		// $("#id").val(""),
-		// $("#name").val(""),
-		// $("#email").val(""),
-		// $("#telefone").val("") 
-
 		if($("#submit").val() === 'Cadastrar'){
-			
 			contatos.cadastrar(contato);
-
 		}else{
-			
+			contatos.atualizar(contato);
 		}
 
 	});
 
 	//Editar contato
+	$(document).delegate('#editarContato', 'click', function(event){
+		event.preventDefault();
+	 	
+	 	var contatoArray = [];
+
+	 	$(this).parents('li').find('span').each(function(index){
+	 		contatoArray[index] = $(this).text();
+	 	}); 
+		
+	 	var id = $(this).parents('li').attr("data-id");
+		
+		$("#id").val(id);
+	 	$("#name").val(contatoArray[0]);
+		$("#email").val(contatoArray[1]);
+		$("#telefone").val(contatoArray[2]);
+		$("#submit").val('Atualizar');
+	});
 
 	//Remover contato
+	$(document).delegate('#excluirContato', 'click', function(event){
+		event.preventDefault();
+
+		if(confirm("Deseja excluir este contato?")){
+			var idContato = $(this).parents('li').attr("data-id");
+			if(contatos.remover(idContato)){
+				$(this).parents('li').hide(function(){
+					alert('Contato removido com sucesso!');	
+				});
+				contatos.exibirTotalRegistros();
+			}else{
+				alert('Ocorreu uma falha na exclusão do contato!');
+			}
+		}
+	});
 
 	contatos.listar();
 
