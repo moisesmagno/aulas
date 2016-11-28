@@ -1,0 +1,35 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Atributos privador e métodos privilegiados</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+			var User = function(param){
+				//Adicionando a palavra var, o atributo parssa a ser privador e acessado apenas pelo construtor ou métodos abaixo do escopo.
+				var nome = param.nome;
+				var sobrenome = param.sobrenome;
+				var idade = param.idade;
+				var gender = param.gender;
+
+				//Ao colocar o this, o atributo ou método passa a ser público.
+				this.mostrarDados = function(){
+					var space = ' ';
+					return nome.concat(space+sobrenome+space+idade+space+gender);
+				}
+			}
+
+			var user = new User({
+				"nome": "Moisés Salvador",
+				"sobrenome": "Escurra Aguilar",
+				"idade": 29,
+				"gender": "Male"
+			});
+
+			console.log(user.mostrarDados());
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

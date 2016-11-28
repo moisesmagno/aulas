@@ -1,0 +1,39 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Nome de variaveis e métodos</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+				var area = (function(){
+					var retangulo = function(base, altura){
+						var area = base * altura;
+						return area;
+					}
+
+					var triangulo = function(base, altura){
+						var area = (base * altura)/2;
+						return area;
+					}
+
+					var trapezio = function(baseMaior, baseMenor, altura){
+						var area = ((baseMaior + baseMenor) * altura)/2;
+						return area;
+					}
+
+					return{
+						retangulo : retangulo,
+						triangulo : triangulo, 
+						trapezio : trapezio
+					}
+				});
+
+				// console.log(area);
+				console.log(area().retangulo(3,2));
+				console.log(area().triangulo(3,2));
+				console.log(area().trapezio(4,3,2));
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

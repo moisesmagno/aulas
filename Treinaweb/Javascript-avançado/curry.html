@@ -1,0 +1,24 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Curry</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+			var soma = function(valor1, valor2){
+				if(valor1 && valor2){
+					return valor1 + valor2;
+				}
+
+				if(valor1){
+					var valOld = valor1;
+					return function(valor2){
+						console.log(valOld + valor2);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

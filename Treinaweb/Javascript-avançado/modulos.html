@@ -1,0 +1,50 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Módulos</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+			var MyApp = {
+				models: {},
+				controller: {},
+				view: {},
+				utils: {}
+			}
+
+			MyApp.models.User = function(nome, idade, sexo, email){
+				this.nome = nome;
+				this.idade = idade;
+				this.sexo = sexo;
+				this.email = email;
+			}
+
+			MyApp.utils.validator = (function(){
+				var validarEmail = function(email){
+					return email+' validadeo com sucesso!';
+				}
+
+				return {
+					validarEmail: validarEmail
+				}
+			})();
+
+			MyApp.controller.userController = (function(User, Validator){
+				var user = new User("Moisés", 29, 'Macho', 'moisesmagno@gmail.com');
+				
+				console.log(user.nome);
+				console.log(Validator.validarEmail(user.email));
+				// return {
+				// 	user: user
+				// } 
+
+			})(MyApp.models.User, MyApp.utils.validator);
+			
+			
+
+			
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
