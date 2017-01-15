@@ -1,0 +1,14 @@
+<catalog>
+  <fruit>
+    <name>banana</name>
+    <color>amarela</color>
+  </fruit>
+  <fruit>
+    <name>laranja</name>
+    <color>laranja</color>
+  </fruit>
+  <fruit>
+    <name>pera</name>
+    <color>branca</color>
+  </fruit>
+</catalog>

@@ -9,7 +9,10 @@
         <?php
             require('./_app/Config.inc.php');
             
+            //Limpa qualquer tipo de inserção malisiosa.
             $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            
+            //Pega as informações do formulário sendImagess
             if($form && $form['sendImage']):
                 
                 $upload = new Upload;
