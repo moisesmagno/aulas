@@ -1,0 +1,1 @@
+console.log('Eu vou ser foda no node.js');
