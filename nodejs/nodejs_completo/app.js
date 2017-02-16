@@ -4,3 +4,4 @@ var app = require('./config/server'); //Requisita o módulo Server.js
 app.listen(3000, function(){
 	console.log('Servidor ON :)');
 });
+

@@ -9,5 +9,9 @@ module.exports = function(){
 
 	}
 
+	this.salvarNoticia = function(noticia, connection, callback){
+		connection.query('INSERT INTO TB_NOTICIAS SET ?', noticia, callback);
+	}
+
 	return this; 
 }
