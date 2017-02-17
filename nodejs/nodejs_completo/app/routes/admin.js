@@ -9,10 +9,10 @@ module.exports = function(app){
 		var noticia = req.body;
 
 		var connection = app.config.dbConnection(); //Chama a conexão com o banco.
-		var noticiaModel = app.app.models.noticiasModel; //Chama o model noticiaModel.
+		var noticiaModel = new app.app.models.NoticiasDAO(connection); //Chama o model noticiaModel.
 
 		//Envia a conexão, os dados inputados do formulário e o callback para o método salvarNoticia() no model noticiaModel.
-		noticiaModel.salvarNoticia(noticia, connection, function(error, result){
+		noticiaModel.salvarNoticia(noticia, function(error, result){
 			res.redirect('/noticias');
 		});
 		

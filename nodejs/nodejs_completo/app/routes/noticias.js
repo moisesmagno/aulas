@@ -5,9 +5,9 @@
 
 		var connection = app.config.dbConnection(); //Atribui o método de conexão com o banco de dados em uma variável.
 		
-		var noticiasModel = app.app.models.noticiasModel;
+		var noticiasModel = new app.app.models.NoticiasDAO(connection);
 
-		noticiasModel.getNoticias(connection, function(error, result){
+		noticiasModel.getNoticias(function(error, result){
 			res.render('noticias/noticias', {noticias: result});
 		});
 	});
