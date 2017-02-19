@@ -1,20 +1,12 @@
-module.exports = function(app){
+module.exports = function(application){
 	//Rota para o formulário de inclusão da noticia
-	app.get('/formulario-inclusao-noticia', function(req, res){
-		res.render('admin/form_add_noticia');
+	application.get('/formulario-inclusao-noticia', function(req, res){
+		application.app.controller.admin.formulario_inclusao_noticia(application, req, res);
 	});
 
-	app.post('/noticias/salvar', function(req, res){
+	application.post('/noticias/salvar', function(req, res){
 		
-		var noticia = req.body;
-
-		var connection = app.config.dbConnection(); //Chama a conexão com o banco.
-		var noticiaModel = new app.app.models.NoticiasDAO(connection); //Chama o model noticiaModel.
-
-		//Envia a conexão, os dados inputados do formulário e o callback para o método salvarNoticia() no model noticiaModel.
-		noticiaModel.salvarNoticia(noticia, function(error, result){
-			res.redirect('/noticias');
-		});
+		application.app.controller.admin.noticia_salvar(application, req, res);
 		
 	});
 }

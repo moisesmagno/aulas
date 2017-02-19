@@ -1,7 +1,8 @@
-module.exports = function(app){
+module.exports = function(application){
 	//Rota para o index.
-	app.get('/', function(req, res){
-		res.render('home/index');
+	application.get('/', function(req, res){
+		application.app.controller.home.index(application, req, res);
 	});
+
 }
 

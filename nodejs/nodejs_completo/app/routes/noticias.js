@@ -1,15 +1,17 @@
- module.exports = function(app){
+ module.exports = function(application){
 
 	//Rota para as notícias
-	app.get('/noticias', function(req, res){
+	application.get('/noticias', function(req, res){
 
-		var connection = app.config.dbConnection(); //Atribui o método de conexão com o banco de dados em uma variável.
-		
-		var noticiasModel = new app.app.models.NoticiasDAO(connection);
+		application.app.controller.noticias.noticias(application, req, res);
 
-		noticiasModel.getNoticias(function(error, result){
-			res.render('noticias/noticias', {noticias: result});
-		});
+	});
+
+	//Rota para notícia
+	application.get('/noticia', function(req, res){
+
+		application.app.controller.noticias.noticia(application, req, res);
+
 	});
 }
 
