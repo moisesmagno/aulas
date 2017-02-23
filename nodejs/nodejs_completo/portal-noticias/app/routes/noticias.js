@@ -4,13 +4,13 @@ module.exports = function(application){
 	application.get('/noticias', function(req, res){
 
 		//Chama o controller.
-		console.log('Estou na rota noticias.');
+		application.app.controllers.noticiasController.noticias(application, req, res);
 	});
 
 	//Rota Noticia
 	application.get('/noticia', function(req, res){
 
 		//Chama o controller.
-		console.log('Estou na rota noticia.');
+		application.app.controllers.noticiasController.noticia(application, req, res);
 	});
 }

@@ -29,9 +29,9 @@ module.exports.salvarNoticia = function(application, req, res){
 	noticiasModel.salvaNoticia(dadosNoticia, function(error, result){
 
 		if(result.affectedRows == 1){
-			res.render('noticias/noticias');
+			res.redirect('/noticias');
 		}else{
-			console.log('Ocorreu um erro ao gravar no banco.');
+			console.log('Ocorreu um erro ao gravar a notícia no banco.');
 		}
 		
 	});
