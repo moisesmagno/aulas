@@ -36,3 +36,19 @@ module.exports.salvarNoticia = function(application, req, res){
 		
 	});
 }
+
+//Exclui notícia
+module.exports.excluir = function(application, req, res){
+	var connection = application.config.dbConnection();
+	var noticiasModel = new application.app.models.noticiasModel(connection);
+
+	var idNoticia = req.query.id_noticia;	
+
+	noticiasModel.excluir(idNoticia, function(error, result){
+		if(result.affectedRows == 1){
+			res.redirect('/noticias');
+		}else{
+			res.redirect('/noticias');
+		}
+	});
+}

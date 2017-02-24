@@ -18,6 +18,9 @@ noticiasModel.prototype.recuperarNoticia = function(id_noticia, callback){
 	this._connection.query('SELECT * FROM TB_NOTICIAS WHERE id_noticias = ' + id_noticia, callback);
 }
 
+noticiasModel.prototype.excluir = function(id_noticia, callback){
+	this._connection.query('DELETE FROM TB_NOTICIAS WHERE id_noticias = ' + id_noticia, callback); 
+}
 
 module.exports = function(){
 	return noticiasModel;

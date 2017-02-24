@@ -43,9 +43,25 @@
 			</div>
 		</nav>
 
-
+		<% if(typeof alerta !== 'undefined'){ %>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="alert alert-danger">
+						<strong>Atenção!</strong>
+						<ul>
+							<% if(alerta == 1){ %>
+								<li>Notícia excluido com sucesso!</li>
+							<% }else{ %>
+								<li>Ocorreu um erro ao tentar excluir a notícia!</li>
+							<% } %>
+						</ul>
+					</div>
+				</div>
+			</div>
+	    <% } %>
+	    
 	    <div class="container">
-			<% 
+			<% 	
 				if(noticias.length > 0){ 
 					for(var i = 0; i < noticias.length; i++){
 			%>
@@ -59,6 +75,14 @@
 					    			<p class="noticia_resumo">
 					    				<%= noticias[i].resumo %>
 					    			</p>
+					    			<div class="col-md-2">
+							    		<a href="editar?id_noticia=<%= noticias[i].id_noticias %>">Editar</a>
+							    	</div>
+							    	<div class="col-md-2">
+							    		<a href="excluir?id_noticia=<%= noticias[i].id_noticias %>">Excluir</a>
+							    	</div>
+							    	<br>
+
 					    		</div>
 					    	</div>
 						</div>			
