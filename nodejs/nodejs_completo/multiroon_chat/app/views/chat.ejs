@@ -79,21 +79,7 @@
 			
 			<div class="row participantes" id="participantes" style="display:none">
 				<div class="col-md-1"></div>
-				<div class="col-md-10">
-					<span class="participante">
-						<img src="images/ico_usuario.png" />
-						Jorge
-					</span>
-					
-					<span class="participante">
-						<img src="images/ico_usuario.png" />
-						José
-					</span>
-					
-					<span class="participante">
-						<img src="images/ico_usuario.png" />
-						Fernando
-					</span>
+				<div class="col-md-10" id="usuario_online">
 				</div>
 				<div class="col-md-1"></div>
                 
@@ -103,16 +89,15 @@
 		<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
 			<div class="container">
 				<div class="panel-body campo-mensagem">
-					<form>
-						<div class="col-md-12">
-							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Mensagem">
-								<span class="input-group-btn">
-									<button class="btn btn-default" type="button">></button>
-								</span>
-							</div>
+					<div class="col-md-12">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Mensagem" id="mensagem">
+							<input type="hidden" value="<%= dados.apelido %>" id="apelido">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button" id="enviar_msgm">></button>
+							</span>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</nav>		
@@ -120,9 +105,36 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
+
 			//Atribuindo a instância do objeto io().
 			var socket = io('http://localhost:8080');
 
+			socket.emit('usuarioOnline', {apelido: $('#apelido').val()});
+
+			socket.on('gravaUsuOnline', function(data){
+				var html = '';
+
+				html += '<span data-usuario-on="'+data.apelido+'" class="participantes">';
+					html += '<img src="images/ico_usuario.png">';
+					html += data.apelido;
+				html += '</span>';
+
+				$('#usuario_online').append(html);
+			});
+
+			//Pegar os valores do campo input e enviar para o servidor.
+			$("#enviar_msgm").click(function(){
+
+				socket.emit('msgParaServidor', {
+					apelido: $('#apelido').val(),
+					msg: $('#mensagem').val()
+				});
+
+				$('#mensagem').val('');	
+
+			});
+
+			//Monta o popup do chat com as informações recebidas do servidor.
 			socket.on('msgCliente', function(data){
 
 				var html = '<div class="dialogo">';
@@ -131,6 +143,8 @@
 					html += '</div>';
 
 				$('#dialogos').append(html);
+
+				window.scrollTo(0, document.body.scrollHeight);
 			});
 
 		</script>
