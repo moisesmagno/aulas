@@ -18,5 +18,13 @@ module.exports.cadastrar = function(application, req, res){
 		return
 	}
 
+	//Conectando com o banco db.
+	var connection = application.config.dbConnection;
+
+	//Instanciando o UsuariosModel
+	var usuarioModel = new application.app.models.UsuariosModel(connection);
+
+	usuarioModel.inserirUsusario(dadosForm);
+
 	res.send('Vamos cadastrar!');
 }
