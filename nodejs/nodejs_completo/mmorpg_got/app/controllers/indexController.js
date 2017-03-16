@@ -16,6 +16,9 @@ module.exports.autenticar = function(application, req, res){
 		return;
 	}
 
-	res.send('Está tudo ok!');
+	var connection = application.config.dbConnection;
+	var usuarioModel = new application.app.models.UsuariosModel(connection);
+
+	usuarioModel.autenticar(dadosForm, req, res);
 
 }
