@@ -10,7 +10,7 @@ UsuariosModel.prototype.inserirUsusario = function(usuario){
 			collection.insert(usuario);
 
 			//Sempre fechar a conexão.
-			mongoclient.save();
+			mongoclient.close();
 		});
 	});
 }

@@ -23,8 +23,10 @@ module.exports.cadastrar = function(application, req, res){
 
 	//Instanciando o UsuariosModel
 	var usuarioModel = new application.app.models.UsuariosModel(connection);
+	var jogoModel = new application.app.models.JogoModel(connection);
 
 	usuarioModel.inserirUsusario(dadosForm);
+	jogoModel.gerarParametros(dadosForm.usuario);
 
 	res.send('Vamos cadastrar!');
 }
