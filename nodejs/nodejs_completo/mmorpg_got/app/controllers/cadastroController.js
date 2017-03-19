@@ -17,10 +17,8 @@ module.exports.cadastrar = function(application, req, res){
 		res.render('cadastro', {validacao: error, dadosForm: dadosForm});
 		return
 	}
-
 	//Conectando com o banco db.
 	var connection = application.config.dbConnection;
-
 	//Instanciando o UsuariosModel
 	var usuarioModel = new application.app.models.UsuariosModel(connection);
 	var jogoModel = new application.app.models.JogoModel(connection);
@@ -28,5 +26,5 @@ module.exports.cadastrar = function(application, req, res){
 	usuarioModel.inserirUsusario(dadosForm);
 	jogoModel.gerarParametros(dadosForm.usuario);
 
-	res.send('Vamos cadastrar!');
+	res.send('Cadastrado!');
 }
