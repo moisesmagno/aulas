@@ -28,11 +28,11 @@ JogoModel.prototype.gerarParametros = function(usuario){
 }
 
 //Recupera os dados do jogo.
-JogoModel.prototype.iniciarJogo = function(res, usuario, casa, comando_invalido){
+JogoModel.prototype.iniciarJogo = function(res, usuario, casa, msg){
 	this._connection.open(function(error, mongoclient){
 		mongoclient.collection('jogo', function(error, collection){
 			collection.find({usuario:usuario}).toArray(function(error, result){
-				res.render('jogo', {img_casa: casa, jogo: result[0], comando_invalido: comando_invalido});
+				res.render('jogo', {img_casa: casa, jogo: result[0], msg: msg});
 				mongoclient.close();
 			}); 
 		});
@@ -42,9 +42,35 @@ JogoModel.prototype.iniciarJogo = function(res, usuario, casa, comando_invalido)
 JogoModel.prototype.acao = function(acao){
 	this._connection.open(function(error, mongoclient){
 		mongoclient.collection('acao', function(error, collection){
+			
+			var date = new Date();
+
+			var tempo = null;
+
+			switch(acao.acao){
+				case 1: tempo = 1 * 60 * 60000;
+				case 2: tempo = 2 * 60 * 60000;
+				case 3: tempo = 5 * 60 * 60000;
+				case 4: tempo = 5 * 60 * 60000;
+			}
+
+			acao.acao_termina_em = date.getTime() + tempo;
+
 			collection.insert(acao);
 
 			mongoclient.close();
+		});
+	});
+}
+
+JogoModel.prototype.getAcoes = function(usuario){
+	this._connection.open(function(erro, mongoclient){	
+		mongoclient.collection('acao', function(error, collection){
+			collection.find({usuario: usuario}).toArray(function(error, result){
+				console.log(result);
+
+				mongoclient.close();
+			});
 		});
 	});
 }
