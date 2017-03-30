@@ -1,3 +1,6 @@
+//Transforma uma variável com informação em objeto.
+var ObjectID = require('mongoDB').ObjectId;
+
 function JogoModel(connection){
 	this._connection = connection();
 }
@@ -50,13 +53,29 @@ JogoModel.prototype.acao = function(acao){
 			switch(parseInt(acao.acao)){
 				case 1: tempo = 1 * 60 * 60000; break;
 				case 2: tempo = 2 * 60 * 60000; break;
-				case 3: tempo = 3 * 60 * 60000;	break;
-				case 4: tempo = 4 * 60 * 60000; break;
+				case 3: tempo = 5 * 60 * 60000;	break;
+				case 4: tempo = 5 * 60 * 60000; break;
 			}
 
 			acao.acao_termina_em = date.getTime() + tempo;
 
 			collection.insert(acao);
+		});
+
+		mongoclient.collection('jogo', function(error, collection){
+
+			var moedas = '';
+			switch(parseInt(acao.acao)){
+				case 1: moedas = -2 * acao.quantidade; break; 
+				case 2: moedas = -3 * acao.quantidade; break;
+				case 3: moedas = -1 * acao.quantidade; break; 
+				case 4: moedas = -1 * acao.quantidade; break;
+			}
+
+			collection.update(
+				{usuario: acao.usuario},
+				{$inc: {moeda: moedas}}
+			);
 
 			mongoclient.close();
 		});
@@ -80,6 +99,22 @@ JogoModel.prototype.getAcoes = function(usuario, res){
 	});
 }
 
+JogoModel.prototype.revogarAcao = function(_id, res){
+	this._connection.open(function(error, mongoclient){
+		mongoclient.collection('acao', function(error, collection){
+			collection.remove(
+					{_id: ObjectID(_id)},
+					function(error, result){
+
+						res.redirect('jogo?msg=D');
+						mongoclient.close();
+					}
+				);
+		});
+	});
+}
+
+//Exporta o método(classe) jogomodel.
 module.exports =function(){
 	return JogoModel;
 }
