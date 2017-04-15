@@ -1,30 +1,19 @@
 @extends('templates.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Title</h2>
-            <p>Posted 5 hours ago</p>
+
+    @foreach($posts as $post)
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3><a href="{{ route('post_path', ['post' => $post->id]) }}">{{$post->title}}</a></h3>
+                <p>posted {{ $post->created_at->diffForHumans() }}</p>
+            </div>
         </div>
-    </div>
 
-    <br>
+        <br>
+    @endforeach
 
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Title</h2>
-            <p>Posted 5 hours ago</p>
-        </div>
-    </div>
+    {{ $posts->render() }}
 
-    <br>
-
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Title</h2>
-            <p>Posted 5 hours ago</p>
-        </div>
-    </div>
-
-    <br>
 @endsection
