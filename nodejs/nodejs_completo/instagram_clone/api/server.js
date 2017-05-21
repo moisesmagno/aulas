@@ -11,6 +11,14 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: true})); //application/x-www-form-urlencode (Não está preparado para receber arquivos).
 app.use(bodyParser.json()); //Recebe Json
 app.use(multiparty()); //multipart/form-data (Está preparado para receber arquivos)
+app.use(function(req, res, next){
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.setHeader("Access-Control-Allow-Headers", "content-type");
+    res.setHeader("Access-Control-Allow-Credentials", true);
+
+    next();
+});
 
 app.listen(8080);
 
@@ -137,7 +145,13 @@ app.put('/api/:id', function(req, res){
         mongoclient.collection('postagens', function(error, collection){
             collection.update(
                 {_id: objectId(req.params.id)},
-                {$set: {url_imagem: req.body.url_imagem}},
+                {$push: {
+                            comentarios: {
+                                id_comentario: new objectId(),
+                                comentario: req.body.comentario,
+                            }
+                        }
+                },
                 {},
                 function(error, result){
                     if(error){
@@ -159,8 +173,18 @@ app.put('/api/:id', function(req, res){
 app.delete('/api/:id', function(req, res){
     db.open(function(error, mongoclient){
         mongoclient.collection('postagens', function(error, collection){
-            collection.remove(
-                {_id: objectId(req.params.id)},
+            collection.update(
+                {},
+                {
+                    $pull: {
+                        comentarios: {
+                            id_comentario: objectId(req.params.id)
+                        }
+                    }
+                },
+                {
+                    multi: true
+                },
                 function(error, result){
                     if(error){
                         res.json(error);
