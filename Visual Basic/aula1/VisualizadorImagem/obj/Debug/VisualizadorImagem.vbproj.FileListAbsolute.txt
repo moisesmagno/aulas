@@ -1,0 +1,12 @@
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\bin\Debug\VisualizadorImagem.exe.config
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\bin\Debug\VisualizadorImagem.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\bin\Debug\VisualizadorImagem.pdb
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\bin\Debug\VisualizadorImagem.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\obj\Debug\VisualizadorImagem.vbprojResolveAssemblyReference.cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\obj\Debug\VisualizadorImagem.frmPrincipal.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\obj\Debug\VisualizadorImagem.frmSobre.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\obj\Debug\VisualizadorImagem.Resources.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\obj\Debug\VisualizadorImagem.vbproj.GenerateResource.Cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\obj\Debug\VisualizadorImagem.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\obj\Debug\VisualizadorImagem.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\VisualizadorImagem\obj\Debug\VisualizadorImagem.pdb

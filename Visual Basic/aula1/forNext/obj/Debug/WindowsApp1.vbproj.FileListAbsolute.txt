@@ -1,0 +1,11 @@
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\obj\Debug\WindowsApp1.vbprojResolveAssemblyReference.cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\obj\Debug\WindowsApp1.Form1.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\obj\Debug\WindowsApp1.vbproj.GenerateResource.Cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\forNext\WindowsApp1\obj\Debug\WindowsApp1.pdb

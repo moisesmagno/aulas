@@ -1,0 +1,11 @@
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\bin\Debug\aula1.exe.config
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\bin\Debug\aula1.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\bin\Debug\aula1.pdb
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\bin\Debug\aula1.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\obj\Debug\aula1.vbprojResolveAssemblyReference.cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\obj\Debug\aula1.formAula1.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\obj\Debug\aula1.Resources.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\obj\Debug\aula1.vbproj.GenerateResource.Cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\obj\Debug\aula1.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\obj\Debug\aula1.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\aula1\obj\Debug\aula1.pdb

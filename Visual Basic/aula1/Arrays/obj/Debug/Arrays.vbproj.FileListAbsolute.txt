@@ -1,0 +1,12 @@
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\bin\Debug\Arrays.exe.config
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\bin\Debug\Arrays.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\bin\Debug\Arrays.pdb
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\bin\Debug\Arrays.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\obj\Debug\Arrays.vbprojResolveAssemblyReference.cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\obj\Debug\Arrays.Form1.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\obj\Debug\Arrays.Resources.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\obj\Debug\Arrays.vbproj.GenerateResource.Cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\obj\Debug\Arrays.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\obj\Debug\Arrays.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\obj\Debug\Arrays.pdb
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Arrays\obj\Debug\Arrays.frmGastosDiarios.resources

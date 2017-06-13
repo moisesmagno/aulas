@@ -1,0 +1,11 @@
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\bin\Debug\ifSimples.exe.config
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\bin\Debug\ifSimples.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\bin\Debug\ifSimples.pdb
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\bin\Debug\ifSimples.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\obj\Debug\ifSimples.vbprojResolveAssemblyReference.cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\obj\Debug\ifSimples.Form1.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\obj\Debug\ifSimples.Resources.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\obj\Debug\ifSimples.vbproj.GenerateResource.Cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\obj\Debug\ifSimples.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\obj\Debug\ifSimples.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\ifSimples\ifSimples\obj\Debug\ifSimples.pdb

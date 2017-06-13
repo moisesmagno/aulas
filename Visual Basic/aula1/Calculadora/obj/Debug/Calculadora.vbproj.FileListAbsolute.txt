@@ -1,0 +1,11 @@
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\bin\Debug\Calculadora.exe.config
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\bin\Debug\Calculadora.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\bin\Debug\Calculadora.pdb
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\bin\Debug\Calculadora.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\obj\Debug\Calculadora.vbprojResolveAssemblyReference.cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\obj\Debug\Calculadora.frmCalculadora.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\obj\Debug\Calculadora.Resources.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\obj\Debug\Calculadora.vbproj.GenerateResource.Cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\obj\Debug\Calculadora.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\obj\Debug\Calculadora.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Calculadora\obj\Debug\Calculadora.pdb

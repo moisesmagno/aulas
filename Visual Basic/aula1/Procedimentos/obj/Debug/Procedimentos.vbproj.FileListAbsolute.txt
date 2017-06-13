@@ -1,0 +1,11 @@
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\bin\Debug\Procedimentos.exe.config
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\bin\Debug\Procedimentos.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\bin\Debug\Procedimentos.pdb
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\bin\Debug\Procedimentos.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\obj\Debug\Procedimentos.vbprojResolveAssemblyReference.cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\obj\Debug\Procedimentos.Form1.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\obj\Debug\Procedimentos.Resources.resources
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\obj\Debug\Procedimentos.vbproj.GenerateResource.Cache
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\obj\Debug\Procedimentos.exe
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\obj\Debug\Procedimentos.xml
+C:\xampp\htdocs\aulas\Visual Basic\aula1\Procedimentos\obj\Debug\Procedimentos.pdb

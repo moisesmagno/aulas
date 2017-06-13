@@ -1,0 +1,11 @@
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\bin\Debug\variaveis.exe.config
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\bin\Debug\variaveis.exe
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\bin\Debug\variaveis.pdb
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\bin\Debug\variaveis.xml
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\obj\Debug\variaveis.vbprojResolveAssemblyReference.cache
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\obj\Debug\variaveis.Form1.resources
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\obj\Debug\variaveis.Resources.resources
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\obj\Debug\variaveis.vbproj.GenerateResource.Cache
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\obj\Debug\variaveis.exe
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\obj\Debug\variaveis.xml
+C:\xampp\htdocs\aulas\Visual Basic\variaveis\variaveis\obj\Debug\variaveis.pdb
