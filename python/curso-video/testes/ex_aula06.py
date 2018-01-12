@@ -1,0 +1,10 @@
+algo = input('Digite qualquer coisa: ')
+
+print('Alfa: ', algo.isalpha())
+print('Alfanumerico: ', algo.isalnum())
+print('Todo Maiuscula: ', algo.isupper())
+print('Todo Minuscula: ', algo.islower())
+print('Decimal: ', algo.isdecimal())
+print('Numerico', algo.isnumeric())
+print('Espaço: ', algo.isspace())
+print(type(algo))
